@@ -1,0 +1,23 @@
+{
+  "name": "intro-to-accessibility",
+  "version": "1.0.0",
+  "description": "Intro to Accessibility: make the internet for everyone.",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  },
+  "author": "@akattow",
+  "license": "MIT",
+  "devDependencies": {
+    "mdx-deck": "^3.0.13"
+  },
+  "dependencies": {
+    "react-helmet": "^5.2.1",
+    "typescript": "^3.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
