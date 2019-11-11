@@ -1,20 +1,258 @@
 import highlight from "@mdx-deck/themes/syntax-highlighter-prism";
 import baseTheme from "./theme";
-import Layout from "./layout";
 export const themes = [highlight, baseTheme];
 
-# Intro to Accessibility
+import { Appear, Notes } from "mdx-deck";
 
-Making the web for everyone.
+import Layout from './layout'
+import {Small, ExtraSmall, Flex} from './components/shared';
 
----
+import brace from './images/2016.jpg'
+import wat from './images/wat.gif'
 
 <Layout>
 
-# Content
+  # Intro to Accessibility
+  
+  Making the web for everyone.
+  
+  Slides available here: [netlify.url.com](url)
 
 </Layout>
 
 ---
 
-# Thank you!
+<Layout>
+
+# Topics
+
+  - Why accessibility matters and who it affects
+  - How to debug your web projects
+  - Top accessibility problems
+
+</Layout>
+
+---
+
+<Layout>
+
+# Hello! I'm Kat
+
+[she/her]
+
+UI developer, accessibility advocate, pug mom
+
+<Appear>
+
+  <p>...and in 2016...</p>
+
+</Appear>
+
+</Layout>
+
+---
+
+<Layout>
+
+# I broke my neck
+
+<div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+<img src={brace} style={{marginLeft: 0, marginRight: '1em'}} alt="a photo of me in a neck brace"/>
+<Small>
+<ul>
+<Appear>
+  <li>I couldn't bend my head down</li>
+  <li>I couldn't lift my right arm up</li>
+  <li>It really sucked</li>
+</Appear>
+</ul>
+</Small>
+</div>
+
+</Layout>
+
+<Notes>
+
+- I was really lucky
+- Only in the neck brace for 4 weeks
+- I had full range of motion in my shoulder in about 3 or 4 months, although it took much longer to get my strength back
+
+</Notes>
+
+---
+
+<Layout>
+
+# Anyone can be disabled or impaired, any time
+
+</Layout>
+
+<Notes>
+
+- You could be in a crash, like me
+- You could have a surgical procedure or a common health condition
+- You probably know someone with dyslexia, or a vestibular disorder, even if you don't realize it
+- All of those can be affected by poor web practices
+- Impairment isn't something that just happens to other people
+
+- Now, we've probably all heard someone in marketing or the C-Suite say this...
+
+</Notes>
+
+---
+
+<Layout>
+
+# Who's your audience?
+# *'Everyone!'*
+
+</Layout>
+
+<Notes>
+
+- Your target demographic probably isn't actually *everyone*
+- But I guarantee it *does* include people with disabilities
+
+</Notes>
+
+---
+
+<Layout>
+
+# Stats <span role="img" title="bar chart emoji">📊</span>
+
+<ExtraSmall>
+
+[Americans with Disabilities: 2014](https://www.census.gov/content/dam/Census/library/publications/2018/demo/p70-152.pdf)
+
+</ExtraSmall>
+<Small>
+<ul>
+  <li>In 2014, 85.3 million Americans were living with disabilities</li>
+<Appear>
+  <li>That is over 1 in 4 people</li>
+  <li>About 17.6 percent of people total, or 55.2 million, had a severe disability</li>
+</Appear>
+</ul>
+
+</Small>
+</Layout>
+
+---
+
+<Layout>
+
+  # The Top Million
+
+  <ExtraSmall>
+
+[The WebAIM Million](https://webaim.org/projects/million/)
+
+</ExtraSmall>
+<Small>
+<Appear>
+    <li>In February 2019, WebAIM analyzed the top 1 million websites</li>
+  <li>97.8% of those homepages had detectable accessibility issues</li>
+  <li>There was an average of nearly 60 errors on each home page sampled</li>
+</Appear>
+</Small>
+
+</Layout>
+
+<Notes>
+
+- WebAIM only used automated analysis, which isn't capable of capturing all types of accessibility issues.
+- What percentage do you think had some kind of accessibility issue?
+
+</Notes>
+
+---
+
+<Layout>
+
+# It's money <span role="img" title="money">💰</span>
+
+<Small>
+
+- 2008: Target paid 6 million + legal fees
+- 2019: Domino's $?,???,??? (instead of $38,000)
+
+</Small>
+
+</Layout>
+
+<Notes>
+
+- In 2008, Target paid 6 million, plus the cost of legal fees, to settle a class action lawsuit because their products were not accessible to blind users
+- This year, Domino's decided that rather than spending $38,000 to update their website accessibility, they would pay legal fees to appeal to the Supreme Court
+
+</Notes>
+
+---
+
+<Layout>
+
+# How did it get so bad?
+
+<div style={{width: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+<img src={wat} alt="a confused looking pug"/>
+</div>
+
+<ul>
+<Appear>
+  <li>Common design patterns remove default accessibility</li>
+  <li>You don't know what you don't know</li>
+</Appear>
+</ul>
+
+</Layout>
+
+<Notes>
+
+- A lot of accessibility is baked in to the web, but a lot of common practices break that built-in accessibility.
+- The best way to build accessibile websites is just to know what to look for, which means debugging, manually testing your site, and user testing with users who rely on assistive technology
+
+</Notes>
+
+---
+
+<Layout>
+
+# What you can do
+
+- Use your keyboard to tab through pages
+- Use a web extension to find low-hanging fruit (easy wins)
+- Use a screenreader
+
+</Layout>
+
+<Notes>
+
+- Use a keyboard and tab through - this should take you to every *interactive* element - buttons, links, inputs. You should also be able to see which element you're focused on
+- 
+
+</Notes>
+
+---
+
+<Layout>
+
+# Start here
+
+<ExtraSmall>
+
+  Web extensions: 
+  [axe](https://www.deque.com/axe/), 
+  [Accessibility Insights](https://accessibilityinsights.io/)
+
+  Screenreaders: 
+  [NVDA - Open Source, Windows](https://webaim.org/articles/nvda/), 
+  [Voiceover - native on Mac and iOS](https://webaim.org/articles/voiceover/)
+
+  Other tools: 
+  [Chrome Color Picker](https://developers.google.com/web/updates/2018/01/devtools#contrast), 
+  [NoCoffee Vision Simulator](https://accessgarage.wordpress.com/)
+
+</ExtraSmall>
+
+</Layout>
