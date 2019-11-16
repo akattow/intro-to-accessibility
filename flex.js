@@ -16,5 +16,6 @@ export const FlexSplit = styled.div`
     width: 100%;
     @media screen and (min-width: 600px) {
         display: flex;
+        justify-content: space-evenly;
     }
 `
