@@ -4,31 +4,30 @@ export const themes = [highlight, baseTheme];
 
 import { Appear, Notes } from "mdx-deck";
 
+import { Gif } from './gif'
+import { FlexCenter, FlexColumn, FlexSplit } from './flex'
 import Layout from './layout'
-import {Small, ExtraSmall, Flex} from './components/shared';
 
 import brace from './images/2016.jpg'
-import wat from './images/wat.gif'
+import soBad from './images/soBad.jpg'
+import stackOverflow from './images/stack-overflow.png'
+import sOaxe from './images/so-axe.png'
+import coolPug from './images/cool-pug.jpg'
+import pugGif from './images/pug.gif'
+import thanks from './images/thanks.jpg'
 
 <Layout>
 
-  # Intro to Accessibility
-  
-  Making the web for everyone.
-  
-  Slides available here: [netlify.url.com](url)
+# Intro to Accessibility
 
-</Layout>
+<br />
 
----
+Making the web for everyone.
 
-<Layout>
+<br />
+<br />
 
-# Topics
-
-  - Why accessibility matters and who it affects
-  - How to debug your web projects
-  - Top accessibility problems
+Slides available here: [netlify.url.com](url)
 
 </Layout>
 
@@ -56,9 +55,9 @@ UI developer, accessibility advocate, pug mom
 
 # I broke my neck
 
-<div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+<FlexSplit>
 <img src={brace} style={{marginLeft: 0, marginRight: '1em'}} alt="a photo of me in a neck brace"/>
-<Small>
+
 <ul>
 <Appear>
   <li>I couldn't bend my head down</li>
@@ -66,8 +65,8 @@ UI developer, accessibility advocate, pug mom
   <li>It really sucked</li>
 </Appear>
 </ul>
-</Small>
-</div>
+
+</FlexSplit>
 
 </Layout>
 
@@ -80,22 +79,22 @@ UI developer, accessibility advocate, pug mom
 </Notes>
 
 ---
-
+<Invert>
 <Layout>
+<FlexColumn>
 
 # Anyone can be disabled or impaired, any time
 
+</FlexColumn>
 </Layout>
+</Invert>
 
 <Notes>
 
 - You could be in a crash, like me
 - You could have a surgical procedure or a common health condition
-- You probably know someone with dyslexia, or a vestibular disorder, even if you don't realize it
-- All of those can be affected by poor web practices
-- Impairment isn't something that just happens to other people
-
-- Now, we've probably all heard someone in marketing or the C-Suite say this...
+- This isn't just visbile, physical disabilities. This can include people with dyslexia, color blindness, learning disabilities, and a lot more.
+- I guarantee your audience includes people with disabilities
 
 </Notes>
 
@@ -103,59 +102,28 @@ UI developer, accessibility advocate, pug mom
 
 <Layout>
 
-# Who's your audience?
-# *'Everyone!'*
+# Stats <span role="img" aria-label="bar chart">📊</span>
 
-</Layout>
+In 2014, 85.3 million Americans were living with disabilities
 
-<Notes>
-
-- Your target demographic probably isn't actually *everyone*
-- But I guarantee it *does* include people with disabilities
-
-</Notes>
-
----
-
-<Layout>
-
-# Stats <span role="img" title="bar chart emoji">📊</span>
-
-<ExtraSmall>
-
-[Americans with Disabilities: 2014](https://www.census.gov/content/dam/Census/library/publications/2018/demo/p70-152.pdf)
-
-</ExtraSmall>
-<Small>
-<ul>
-  <li>In 2014, 85.3 million Americans were living with disabilities</li>
 <Appear>
-  <li>That is over 1 in 4 people</li>
-  <li>About 17.6 percent of people total, or 55.2 million, had a severe disability</li>
+  <p>That is over 1 in 4 people</p>
+  <p>About 17.6 percent of people total, or 55.2 million, had a severe disability</p>
 </Appear>
-</ul>
 
-</Small>
 </Layout>
 
 ---
 
 <Layout>
 
-  # The Top Million
+# The Top Million
 
-  <ExtraSmall>
-
-[The WebAIM Million](https://webaim.org/projects/million/)
-
-</ExtraSmall>
-<Small>
 <Appear>
-    <li>In February 2019, WebAIM analyzed the top 1 million websites</li>
-  <li>97.8% of those homepages had detectable accessibility issues</li>
-  <li>There was an average of nearly 60 errors on each home page sampled</li>
+  <p>In February 2019, WebAIM analyzed the top 1 million websites</p>
+  <p>97.8% of those homepages had detectable accessibility issues</p>
+  <p>There was an average of nearly 60 errors on each home page sampled</p>
 </Appear>
-</Small>
 
 </Layout>
 
@@ -170,14 +138,11 @@ UI developer, accessibility advocate, pug mom
 
 <Layout>
 
-# It's money <span role="img" title="money">💰</span>
+# It's Money <span role="img" aria-label="money bag">💰</span>
 
-<Small>
+2008: Target paid 6 million + legal fees
 
-- 2008: Target paid 6 million + legal fees
-- 2019: Domino's $?,???,??? (instead of $38,000)
-
-</Small>
+2019: Domino's $?,???,??? (instead of $38,000)
 
 </Layout>
 
@@ -194,16 +159,7 @@ UI developer, accessibility advocate, pug mom
 
 # How did it get so bad?
 
-<div style={{width: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-<img src={wat} alt="a confused looking pug"/>
-</div>
-
-<ul>
-<Appear>
-  <li>Common design patterns remove default accessibility</li>
-  <li>You don't know what you don't know</li>
-</Appear>
-</ul>
+<img src={soBad} alt="a confused looking pug"/>
 
 </Layout>
 
@@ -218,18 +174,24 @@ UI developer, accessibility advocate, pug mom
 
 <Layout>
 
-# What you can do
+# What can you do?
 
-- Use your keyboard to tab through pages
-- Use a web extension to find low-hanging fruit (easy wins)
-- Use a screenreader
+Use your keyboard to tab through pages
+
+Use [axe](https://www.deque.com/axe/) or  [Accessibility Insights](https://accessibilityinsights.io/)
+
+Use [NVDA](https://webaim.org/articles/nvda/) and/or [Voiceover](https://webaim.org/articles/voiceover/)
+
+Use browser zoom - all the way in!
 
 </Layout>
 
 <Notes>
 
 - Use a keyboard and tab through - this should take you to every *interactive* element - buttons, links, inputs. You should also be able to see which element you're focused on
-- 
+- Use a web extension like axe or accessibility insights to find low-hanging fruit
+- Manually test your site with a screen reader. (use a cheatsheet!)
+- Zoom all the way in - check for page scrolling, font size and scaling, and understandability
 
 </Notes>
 
@@ -237,22 +199,201 @@ UI developer, accessibility advocate, pug mom
 
 <Layout>
 
-# Start here
+# "I can't see this"
 
-<ExtraSmall>
-
-  Web extensions: 
-  [axe](https://www.deque.com/axe/), 
-  [Accessibility Insights](https://accessibilityinsights.io/)
-
-  Screenreaders: 
-  [NVDA - Open Source, Windows](https://webaim.org/articles/nvda/), 
-  [Voiceover - native on Mac and iOS](https://webaim.org/articles/voiceover/)
-
-  Other tools: 
-  [Chrome Color Picker](https://developers.google.com/web/updates/2018/01/devtools#contrast), 
-  [NoCoffee Vision Simulator](https://accessgarage.wordpress.com/)
-
-</ExtraSmall>
+<img src={stackOverflow} alt="a screenshot of low-contrast text from Stack Overflow"/>
+<Appear>
+<img src={sOaxe} alt="axe results from Stack Overflow - 102 color contrast issues" />
+</Appear>
 
 </Layout>
+
+<Notes>
+
+- Going back to the WebAIM million study, about 85% of websites have insufficient color contrast
+- pages had an average of 36 distinct instances
+- common offenders: light gray text, white text on color
+- White you're at it, make sure your font sizes are readable. No one is going to get their reading glasses to see your 8pt font.
+- Do you have content like articles or blog posts? Make sure your pages can be printed! Look into print styles in CSS
+
+</Notes>
+
+
+---
+
+<Layout>
+
+# "No, I *really* can't see this"
+
+<FlexCenter>
+  
+<a href="https://www.kattow.com" style={{marginRight: '1em', width: 'fit-content', background: 'none'}}><img src={coolPug} alt="link to kattow.com"/></a>
+
+- *alt="a cool pug in sunglasses"*
+- *alt=""*
+- *alt="link to kattow.com"*
+
+</FlexCenter>
+
+
+</Layout>
+
+<Notes>
+
+- If you use a screen reader, it can read text. It can't read an image unless the developer tells it what's in the image
+- if an image is purely decorative, you still need to add an empty alt tag
+- the empty alt tag tells the screen reader to not bother announcing the image - if you don't include the alt tag at all, the image gets announced but it's contents are unexplained.
+- if the image is a link, describe where the image will take the user
+
+</Notes>
+
+---
+
+<Layout>
+
+# "I am very confused"
+
+<Appear>
+  <p>Keep it simple, stupid</p>
+  <p>Throw out that div soup</p>
+  <p>The browser is smarter than you</p>
+</Appear>
+
+</Layout>
+
+<Notes>
+
+- Your design should be easy to follow and understand. Users on the autism spectrum, low vision users who use screen magnification, users with dyslexia are all impacted
+- Using semantic markup helps screen readers navigate through a page. Screen readers can skim through headings the same way sighted users might.
+- Using semantic markup actually improves SEO as well.
+- Navite UI controls (button, select, checkboxes) are much more accessible and easier to use than custom JS hacks. You can style them with CSS!
+
+</Notes>
+
+---
+
+<Layout>
+
+# "I am very, VERY confused"
+
+Menus, modals... where am I?
+
+[bonappetite](https://www.bonappetit.com/)
+
+</Layout>
+
+<Notes>
+
+- Tab through a website.
+- bonappetite: cannot tab while it loads, can't seem to tab to the menu button... oh, that's because it's a div, not a button
+- You should be able to see where you are, open menus, and navigate.
+- Don't remove focus styles!
+- Test with a keyboard!
+
+</Notes>
+
+---
+
+<Layout>
+
+# "Just tell me what to do!"
+
+**DO:** `<label>`, `aria-label`, `aria-labelledby`
+
+**DON'T:** 'Click here'
+
+</Layout>
+
+<Notes>
+
+- Let's hop back to the WebAIM Million - 59% of the 3.4 million form input elements identified were unlabelled (either by label, aria-label, or aria-labelledby)
+- Typically forms and input elements are the beginning of a marketing funnel - if users can't complete these because they don't know what is required, you're losing leads.
+
+</Notes>
+
+---
+
+<Layout>
+
+# "Make it stop!"
+
+<FlexColumn>
+<Gif gifImg={pugGif} staticImg={thanks} alt="a confused looking pug"/>
+</FlexColumn>
+
+</Layout>
+
+<Notes>
+
+- Media and motion can make people sick. Bright flashing, fast or unexpected movement, animated infographics, and even parallax effects can cause a variety of ills.
+- No one is saying we can't have motion and media on the web - a lot of it is beautiful, or helps convey complicated information.
+- We need to ensure users have CONTROL
+- Always include controls for media like video and audio
+- Include closed captioning and transcripts
+- Allow users to opt-in to motion: include a 'skip animation' button or offer a toggle at the top of the page, 
+- use the `prefers-reduced-motion` CSS query!
+
+</Notes>
+
+---
+
+<Layout>
+
+# Additional resources
+
+<FlexSplit style={{justifyContent: 'space-around'}}>
+<div>
+
+[Microsoft Inclusive Design](https://www.microsoft.com/design/inclusive)
+
+[The A11y Project Checklist](https://a11yproject.com/checklist/)
+
+[A11y Rocks Color Palette](http://a11yrocks.com/colorPalette/)
+
+[NoCoffee Vision Simulator](https://accessgarage.wordpress.com/)
+
+[Americans with Disabilities: 2014](https://www.census.gov/content/dam/Census/library/publications/2018/demo/p70-152.pdf)
+
+</div>
+<div>
+
+[Deque's Accessibility Heuristics](https://drive.google.com/file/d/1GYlEqdOxq7RdKxG_Od7GzrBh_iYEfNBY/view)
+
+[Safer Web Animation](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/)
+
+[Accessible Colors](https://accessible-colors.com/)
+
+[The WebAIM Million](https://webaim.org/projects/million/)
+
+[ADA IRS Tax Credit](https://www.ada.gov/taxcred.htm)
+
+</div>
+</FlexSplit>
+
+</Layout>
+
+<Notes>
+
+- US companies working to retroactively update to become ADA compliant can use a one-time tax credit (see previous slide)
+- Integrating accessibility into your product design and development cycles does not have to be painful
+- Start with the easiest fixes and continue to iterate and improve
+
+</Notes>
+
+---
+
+<Layout>
+<FlexColumn>
+
+# Thank you!
+
+</FlexColumn>
+</Layout>
+
+<Notes>
+
+- Accessibility improves your UX and your bottom line
+- Accessibility is the law
+- Accessibility is the *right thing to do*
+
+</Notes>
